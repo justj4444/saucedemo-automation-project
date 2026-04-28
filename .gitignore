@@ -1,0 +1,5 @@
+Python
+Playwright
+__pycache__/
+.pytest_cache/
+utils/
