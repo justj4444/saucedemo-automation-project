@@ -1,9 +1,12 @@
 from playwright.sync_api import Page, expect
 from pages.saucedemo_login_page import SaucedemoLoginPage
+import logging
+
+logger = logging.getLogger(__name__)
 
 def test_login_mandatory_field_password_error(page: Page) -> None:
     login_page = SaucedemoLoginPage(page)
     login_page.goto()
     login_page.login("standard_user", "")
     expect(page.locator('[data-test="error"]')).to_have_text("Epic sadface: Password is required")  #assert error message is visible when password field is left empty in login form
-    print("Verified error message for mandatory password field")
+    logger.info("Verified error message for mandatory password field")

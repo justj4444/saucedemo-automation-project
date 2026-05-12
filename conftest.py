@@ -1,5 +1,15 @@
 import pytest
+import logging
 from playwright.sync_api import sync_playwright
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("test_execution.log"),
+        logging.StreamHandler()
+    ]
+)
 
 @pytest.fixture(scope='session')
 def browser():
@@ -33,3 +43,5 @@ def add_products_to_cart(logged_in_user):
             product_page.click_back_to_products()
             product_page.expect_products_page_loaded()
     return _add
+
+    
