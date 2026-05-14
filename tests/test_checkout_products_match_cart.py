@@ -1,5 +1,4 @@
 from playwright.sync_api import Page, expect
-from conftest import add_products_to_cart
 from pages.saucedemo_product_page import SaucedemoProductPage
 from pages.saucedemo_cart_page import SaucedemoCartPage
 from pages.saucedemo_checkout_page import SaucedemoCheckoutPage
