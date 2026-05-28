@@ -1,5 +1,9 @@
 Python
 Playwright
+venv/
 __pycache__/
 .pytest_cache/
-utils/
+*.log
+reports/
+.env
+*.pyc
